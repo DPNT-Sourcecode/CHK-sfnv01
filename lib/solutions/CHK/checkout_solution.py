@@ -76,7 +76,9 @@ def checkout(skus):
         if group_items_basket_count >= group_count:
             total_price += group_price
             group_items_basket_count -= group_count
+            print(group_items)
             for item in group_items:
+                print(item)
                 if item_count[item] > 0:
                     item_count[item] -= 1
     

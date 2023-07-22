@@ -32,4 +32,5 @@ class TestSum():
 
     def test_group_discount_checkout(self):
         assert checkout_solution.checkout('STX') == 45
+        assert checkout_solution.checkout('STXYZ') == 86
         assert checkout_solution.checkout('STXSTX') == 90
