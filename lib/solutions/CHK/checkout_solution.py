@@ -72,7 +72,7 @@ def checkout(skus):
             item_count[free_item] = max(0, item_count[free_item] - free_items)
 
     for group_items, group_count, group_price in group_discount:
-        group_items = sorted(group_items, key=lambda x: prices[x])
+        # group_items = sorted(group_items, key=lambda x: prices[x])
         group_items_basket_count = sum([item_count[item] for item in group_items])
         while group_items_basket_count >= group_count:
             total_price += group_price
