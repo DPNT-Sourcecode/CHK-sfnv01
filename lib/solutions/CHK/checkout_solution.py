@@ -82,7 +82,6 @@ def checkout(skus):
                     item_count[item] -= 1
                     group_items_to_remove -= 1
 
-    print(item_count)
     for item, count in item_count.items():
         if item in special_offer_prices:
             for offer_count, offer_price in sorted(
