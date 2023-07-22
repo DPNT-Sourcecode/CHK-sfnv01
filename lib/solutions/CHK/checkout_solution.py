@@ -80,6 +80,7 @@ def checkout(skus):
                 print(item)
                 if item_count[item] > 0:
                     item_count[item] -= 1
+                    break
 
     print(item_count)
     for item, count in item_count.items():
@@ -93,4 +94,5 @@ def checkout(skus):
         total_price += count * prices[item]
 
     return total_price
+
 
