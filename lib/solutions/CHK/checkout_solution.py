@@ -14,4 +14,11 @@ def checkout(skus):
             return -1
         item_count[item] += 1
 
+    total_price = 0
+    for item, count in item_count.items():
+        total_price += count * prices[item]
+
+    return total_price
+
+
 
