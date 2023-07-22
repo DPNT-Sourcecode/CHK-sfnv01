@@ -51,6 +51,9 @@ def checkout(skus):
     items = prices.keys()
     item_count = {key: 0 for key in items}
 
+    if not isinstance(skus, str):
+        return -1
+
     for item in skus:
         if item not in item_count:
             return -1
@@ -74,4 +77,5 @@ def checkout(skus):
         total_price += count * prices[item]
 
     return total_price
+
 

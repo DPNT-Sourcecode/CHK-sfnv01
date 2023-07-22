@@ -13,7 +13,8 @@ class TestSum():
         assert checkout_solution.checkout('AAABBBD') == 220
 
     def test_wrong_input_checkout(self):
-        assert checkout_solution.checkout('Z') == -1
+        assert checkout_solution.checkout(1) == -1
+        assert checkout_solution.checkout([]) == -1
 
     def test_free_different_item_checkout(self):
         assert checkout_solution.checkout('EEB') == 80
