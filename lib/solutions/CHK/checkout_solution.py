@@ -70,7 +70,9 @@ def checkout(skus):
             item_count[free_item] = max(0, item_count[free_item] - free_items)
     for item, count in item_count.items():
         if item in special_offer_prices:
-            for offer_count, offer_price in special_offer_prices[item]:
+            for offer_count, offer_price in sorted(
+                special_offer_prices[item], reverse=True
+            ):
                 offers_number = count // offer_count
                 count -= offers_number * offer_count
                 total_price += offers_number * offer_price
