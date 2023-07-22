@@ -3,9 +3,9 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 
-prices = {"A": 50, "B": 30, "C": 20, "D": 15, "E": 40}
+prices = {"A": 50, "B": 30, "C": 20, "D": 15, "E": 40, "F": 10}
 special_offer_prices = {"A": [(5, 200),(3, 130)], "B": [(2, 45)]}
-special_free_items = {"E": ("B", 2)}
+special_free_items = {"E": ("B", 2), "F": ("F", 2)}
 def checkout(skus):
     items = prices.keys()
     item_count = {key: 0 for key in items}
