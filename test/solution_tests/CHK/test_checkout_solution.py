@@ -17,5 +17,6 @@ class TestSum():
         assert checkout_solution.checkout('E') == -1
 
     def test_free_item_checkout(self):
-        # assert checkout_solution.checkout('EEB') == 80
-        assert checkout_solution.checkout('EEBB') == 80
+        assert checkout_solution.checkout('EEB') == 80
+        assert checkout_solution.checkout('EEBB') == 85
+
