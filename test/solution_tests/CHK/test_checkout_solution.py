@@ -24,3 +24,4 @@ class TestSum():
         assert checkout_solution.checkout('FFF') == 20
         assert checkout_solution.checkout('FF') == 20
         assert checkout_solution.checkout('FFFFFF') == 40
+        assert checkout_solution.checkout('FFFFFFFFFF') == 70
