@@ -9,3 +9,9 @@ def checkout(skus):
     skus = prices.keys()
     item_count = {key: 0 for key in skus}
 
+    for item in skus:
+        if item not in item_count:
+            return -1
+        item_count[item] += 1
+
+
