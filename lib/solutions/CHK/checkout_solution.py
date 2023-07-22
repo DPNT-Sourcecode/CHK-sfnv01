@@ -20,6 +20,8 @@ def checkout(skus):
         if item in special_free_items:
             free_item, free_item_count = special_free_items[item]
             free_items = item_count[item] // free_item_count
+            if item == 'F' and count < 3:
+                continue
             item_count[free_item] = max(0, item_count[free_item] - free_items)
     for item, count in item_count.items():
         if item in special_offer_prices:
@@ -30,3 +32,4 @@ def checkout(skus):
         total_price += count * prices[item]
 
     return total_price
+
