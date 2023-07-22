@@ -6,8 +6,8 @@
 prices = {"A": 50, "B": 30, "C": 20, "D": 15}
 special_offer_prices = {"A": (3, 130), "B": (2, 45)}
 def checkout(skus):
-    skus = prices.keys()
-    item_count = {key: 0 for key in skus}
+    items = prices.keys()
+    item_count = {key: 0 for key in items}
 
     for item in skus:
         if item not in item_count:
@@ -15,7 +15,6 @@ def checkout(skus):
         item_count[item] += 1
 
     total_price = 0
-    print(item_count)
     for item, count in item_count.items():
         if item in special_offer_prices:
             offer_count, offer_price = special_offer_prices[item]
@@ -26,6 +25,7 @@ def checkout(skus):
             total_price += count * prices[item]
 
     return total_price
+
 
 
 
