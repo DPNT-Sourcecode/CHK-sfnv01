@@ -76,12 +76,12 @@ def checkout(skus):
         while group_items_basket_count >= group_count:
             total_price += group_price
             group_items_basket_count -= group_count
-            for _ in range(group_items):
+            for item in group_items:
                 print(item)
                 if item_count[item] > 0:
                     item_count[item] -= 1
 
-
+    print(item_count)
     for item, count in item_count.items():
         if item in special_offer_prices:
             for offer_count, offer_price in sorted(
@@ -93,3 +93,4 @@ def checkout(skus):
         total_price += count * prices[item]
 
     return total_price
+
