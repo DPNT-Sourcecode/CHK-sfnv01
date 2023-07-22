@@ -73,7 +73,12 @@ def checkout(skus):
 
     for group_items, group_count, group_price in group_discount:
         group_items_basket_count = sum([item_count[item] for item in group_items])
-        print(group_items_basket_count)
+        total_price += group_price
+        group_items_basket_count -= group_count
+        for item in group_items:
+            if item_count[item] > 0:
+                item_count[item] -= 1
+                break
     
 
     for item, count in item_count.items():

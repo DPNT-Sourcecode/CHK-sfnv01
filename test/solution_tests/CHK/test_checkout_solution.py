@@ -31,4 +31,4 @@ class TestSum():
         assert checkout_solution.checkout('AAAAABBBCEEFFFHHHHHHHHHHMNNN') == 565
 
     def test_group_discount_checkout(self):
-        assert checkout_solution.checkout('STX') == 86
+        assert checkout_solution.checkout('STX') == 45
