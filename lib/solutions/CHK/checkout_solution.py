@@ -4,7 +4,7 @@
 # skus = unicode string
 
 prices = {"A": 50, "B": 30, "C": 20, "D": 15, "E": 40}
-special_offer_prices = {"A": [(5, 200),(3, 130)], "B": [(2, 45)], "E": [(2, 40)]}
+special_offer_prices = {"A": [(5, 200),(3, 130)], "B": [(2, 45)]}
 special_free_items = {"E": ("B", 2)}
 def checkout(skus):
     items = prices.keys()
@@ -17,6 +17,10 @@ def checkout(skus):
 
     total_price = 0
     for item, count in item_count.items():
+        if item in special_free_items:
+            free_item, free_item_count = special_free_items[item]
+            free_items = item_count[item] // free_item_count
+            item_count[free_item] = max(0, item_count[free_item] - free_items)
         if item in special_offer_prices:
             for offer_count, offer_price in special_offer_prices[item]:
                 offers_number = count // offer_count
@@ -24,10 +28,6 @@ def checkout(skus):
                 total_price += offers_number * offer_price
         total_price += count * prices[item]
 
-        if item in special_free_items:
-            free_item, free_item_count = special_free_items[item]
-            free_items = item_count[item] // free_item_count
-            item_count[free_item] = max(0, item_count[free_item] - free_items)
-
     return total_price
+
 
