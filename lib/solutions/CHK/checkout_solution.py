@@ -16,6 +16,13 @@ def checkout(skus):
 
     total_price = 0
     for item, count in item_count.items():
-        total_price += count * prices[item]
+        if item in special_offer_prices:
+            offer_count, offer_price = special_offer_prices[item]
+            offers_number = count // offer_count
+            remaining_count = count % offer_count
+            total_price = offers_number * offer_price + remaining_count * prices[item]
+        else:
+            total_price += count * prices[item]
 
     return total_price
+
