@@ -4,7 +4,7 @@
 # skus = unicode string
 
 prices = {"A": 50, "B": 30, "C": 20, "D": 15, "E": 40}
-special_offer_prices = {"A": [(5, 200),(3, 130)], "B": [(2, 45)], "E": [(2, 0)]}
+special_offer_prices = {"A": [(5, 200),(3, 130)], "B": [(2, 45)]}
 special_free_items = {"E": ("B", 2)}
 def checkout(skus):
     items = prices.keys()
@@ -30,6 +30,3 @@ def checkout(skus):
             item_count[free_item] = max(0, item_count[free_item] - free_items)
 
     return total_price
-
-
-
