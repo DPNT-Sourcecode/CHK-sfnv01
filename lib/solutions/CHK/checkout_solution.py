@@ -70,6 +70,12 @@ def checkout(skus):
             else:
                 free_items = item_count[item] // free_item_count
             item_count[free_item] = max(0, item_count[free_item] - free_items)
+
+    for group_items, group_count, group_price in group_discount:
+        group_items_basket_count = sum([item_count[item] for item in group_items])
+        print(group_items_basket_count)
+    
+
     for item, count in item_count.items():
         if item in special_offer_prices:
             for offer_count, offer_price in sorted(

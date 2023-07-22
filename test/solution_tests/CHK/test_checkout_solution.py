@@ -29,3 +29,6 @@ class TestSum():
 
     def test_full_inventory_checkout(self):
         assert checkout_solution.checkout('AAAAABBBCEEFFFHHHHHHHHHHMNNN') == 565
+
+    def test_group_discount_checkout(self):
+        assert checkout_solution.checkout('STXYZ') == 86
