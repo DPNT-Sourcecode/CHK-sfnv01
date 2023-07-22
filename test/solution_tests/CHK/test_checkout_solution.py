@@ -28,7 +28,4 @@ class TestSum():
         assert checkout_solution.checkout('FFFFFFFFFF') == 70
 
     def test_full_inventory_checkout(self):
-        assert checkout_solution.checkout('FFF') == 20
-        assert checkout_solution.checkout('FF') == 20
-        assert checkout_solution.checkout('FFFFFF') == 40
-        assert checkout_solution.checkout('FFFFFFFFFF') == 70
+        assert checkout_solution.checkout('AAAAABBBCEEFFFHHHHHHHHHHMNNN') == 565
