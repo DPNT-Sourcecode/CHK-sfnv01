@@ -4,7 +4,7 @@
 # skus = unicode string
 
 prices = {"A": 50, "B": 30, "C": 20, "D": 15}
-special_offer_prices = {"A": (3, 130), "B": (2, 45)}
+special_offer_prices = {"A": [(5, 200),(3, 130)], "B": [(2, 45)], "E": [(2, 0)]}
 def checkout(skus):
     items = prices.keys()
     item_count = {key: 0 for key in items}
@@ -25,8 +25,3 @@ def checkout(skus):
             total_price += count * prices[item]
 
     return total_price
-
-
-
-
-

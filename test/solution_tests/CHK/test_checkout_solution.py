@@ -10,6 +10,3 @@ class TestSum():
         assert checkout_solution.checkout('AAABBCD') == 210
         assert checkout_solution.checkout('AAABBBD') == 220
         assert checkout_solution.checkout('E') == -1
-
-
-
