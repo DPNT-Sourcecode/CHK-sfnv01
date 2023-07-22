@@ -23,3 +23,4 @@ class TestSum():
     def test_free_same_item_checkout(self):
         assert checkout_solution.checkout('FFF') == 20
         assert checkout_solution.checkout('FF') == 20
+        assert checkout_solution.checkout('FFFFFF') == 20
