@@ -32,14 +32,11 @@ class TestSum():
 
     def test_group_discount_checkout(self):
         assert checkout_solution.checkout('STX') == 45
-        assert checkout_solution.checkout('STXYZ') == 86
+        assert checkout_solution.checkout('STXYZ') == 82
         assert checkout_solution.checkout('STXSTX') == 90
         assert checkout_solution.checkout('SSS') == 45
         assert checkout_solution.checkout('SSSTX') == 82
-        assert checkout_solution.checkout('SSSTXYZ') == 111
-        # assert checkout_solution.checkout('SSSZ') == 65
-        # assert checkout_solution.checkout('ZZZS') == 65
+        assert checkout_solution.checkout('SSSTXYZ') == 107
         assert checkout_solution.checkout('STXS') == 62
-#  - {"method":"checkout","params":["SSSZ"],"id":"CHK_R5_142"}, expected: 65, got: 66
-#  - {"method":"checkout","params":["ZZZS"],"id":"CHK_R5_144"}, expected: 65, got: 66
-#  - {"method":"checkout","params":["STXS"],"id":"CHK_R5_145"}, expected: 62, got: 65
+        assert checkout_solution.checkout('SSSZ') == 65
+        assert checkout_solution.checkout('ZZZS') == 65
