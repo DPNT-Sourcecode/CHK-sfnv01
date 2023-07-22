@@ -76,11 +76,11 @@ def checkout(skus):
         while group_items_basket_count >= group_count:
             total_price += group_price
             group_items_basket_count -= group_count
+            group_items_to_remove = group_count
             for item in group_items:
-                print(item)
-                if item_count[item] > 0:
+                while item_count[item] > 0 and group_items_to_remove > 0:
                     item_count[item] -= 1
-                    break
+                    group_items_to_remove -= 1
 
     print(item_count)
     for item, count in item_count.items():
